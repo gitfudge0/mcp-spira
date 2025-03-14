@@ -21,3 +21,21 @@ export const HandleTestCaseCreation = async (
     content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
   };
 };
+
+export const HandleGetTestCaseById = async (
+  spiraService: SpiraService,
+  request: Request,
+) => {
+  if (!request.params || !request.params.arguments) {
+    throw new Error("Arguments are required");
+  }
+  const args = testcases.GetTestCaseByIdSchema.parse(
+    request.params.arguments,
+  );
+
+  const result = await spiraService.getTestCaseById(args.testCaseId);
+
+  return {
+    content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+  };
+};
