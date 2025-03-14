@@ -50,6 +50,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       description: "Create a test case on Spira",
       inputSchema: zodToJsonSchema(testcases.CreateTestCaseSchema),
     },
+    {
+      name: "get-test-case-by-id",
+      description: "Fetch a test case by its ID from Spira",
+      inputSchema: zodToJsonSchema(testcases.GetTestCaseByIdSchema),
+    },
   ],
 }));
 
@@ -73,6 +78,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
     case "create-test-case": {
       return await testcaseHandlers.HandleTestCaseCreation(
+        spiraService,
+        request,
+      );
+    }
+    case "get-test-case-by-id": {
+      return await testcaseHandlers.HandleGetTestCaseById(
         spiraService,
         request,
       );

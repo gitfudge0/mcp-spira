@@ -6,3 +6,7 @@ export const CreateTestCaseSchema = z.object({
   release: z.string(),
   requirements: z.array(z.string()),
 });
+
+export const GetTestCaseByIdSchema = z.object({
+  testCaseId: z.number(),
+});
