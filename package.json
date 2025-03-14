@@ -1,16 +1,23 @@
 {
-  "name": "mcp-spira",
+  "name": "@gitfudge0/mcp-spira",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build": "rimraf ./dist && tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon --exec ts-node src/index.ts"
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-spira": "./dist/index.js"
   },
+  "scripts": {
+    "build": "rimraf ./dist && tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "gitfudge0",
+  "license": "MIT",
+  "description": "An MCP server for Inflectra's SpiraTest",
   "devDependencies": {
     "@types/node": "^22.13.10",
     "nodemon": "^3.1.9",
@@ -24,5 +31,13 @@
     "dotenv": "^16.4.7",
     "zod": "^3.24.2",
     "zod-to-json-schema": "^3.24.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitfudge0/mcp-spira.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gitfudge0/mcp-spira/issues"
+  },
+  "homepage": "https://github.com/gitfudge0/mcp-spira#readme"
 }
