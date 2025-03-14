@@ -19,3 +19,21 @@ export const HandleRequirementCreation = async (
     content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
   };
 };
+
+export const HandleGetRequirementById = async (
+  spiraService: SpiraService,
+  request: Request,
+) => {
+  if (!request.params || !request.params.arguments) {
+    throw new Error("Arguments are required");
+  }
+  const args = requirements.GetRequirementByIdSchema.parse(
+    request.params.arguments,
+  );
+
+  const result = await spiraService.getRequirementById(args.requirementId);
+
+  return {
+    content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+  };
+};
