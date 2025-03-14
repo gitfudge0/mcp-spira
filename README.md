@@ -90,8 +90,8 @@ To use this with Claude Desktop, add the following to your `claude_desktop_confi
         "SPIRA_API_KEY": "{your_token}",
         "SPIRA_PROJECT_ID": "project_id"
       },
-      "args": ["/path/to/dist/index.js"],
-      "command": "node",
+      "args": ["@gitfudge0/mcp-spira"],
+      "command": "npx",
       "disabled": false
     }
   }
