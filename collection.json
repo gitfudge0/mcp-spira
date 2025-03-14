@@ -1,0 +1,1707 @@
+{
+	"info": {
+		"_postman_id": "76e041f6-2199-400d-aaef-68b621b89aa6",
+		"name": "Spira API Collection (from REST files)",
+		"description": "API Collection for Spira/SpiraPlan REST API created from REST files",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23323315"
+	},
+	"item": [
+		{
+			"name": "Test Cases",
+			"item": [
+				{
+					"name": "Add/Update Automation Script",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/:test_case_id/add-update-automation-script?automation_engine_id=:automation_engine_id&url_or_filename=:url_or_filename&description=:description&version=:version&project_attachment_type_id=:project_attachment_type_id&project_attachment_folder_id=:project_attachment_folder_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								":test_case_id",
+								"add-update-automation-script"
+							],
+							"query": [
+								{
+									"key": "automation_engine_id",
+									"value": ":automation_engine_id"
+								},
+								{
+									"key": "url_or_filename",
+									"value": ":url_or_filename"
+								},
+								{
+									"key": "description",
+									"value": ":description"
+								},
+								{
+									"key": "version",
+									"value": ":version"
+								},
+								{
+									"key": "project_attachment_type_id",
+									"value": ":project_attachment_type_id"
+								},
+								{
+									"key": "project_attachment_folder_id",
+									"value": ":project_attachment_folder_id"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "test_case_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count Test Cases (GET)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/count?release_id=:release_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								"count"
+							],
+							"query": [
+								{
+									"key": "release_id",
+									"value": ":release_id"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count Test Cases (POST)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/count?release_id=:release_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								"count"
+							],
+							"query": [
+								{
+									"key": "release_id",
+									"value": ":release_id"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Test Cases",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases?starting_row=:starting_row&number_of_rows=:number_of_rows&sort_field=:sort_field&sort_direction=:sort_direction&release_id=:release_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases"
+							],
+							"query": [
+								{
+									"key": "starting_row",
+									"value": ":starting_row"
+								},
+								{
+									"key": "number_of_rows",
+									"value": ":number_of_rows"
+								},
+								{
+									"key": "sort_field",
+									"value": ":sort_field"
+								},
+								{
+									"key": "sort_direction",
+									"value": ":sort_direction"
+								},
+								{
+									"key": "release_id",
+									"value": ":release_id"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Test Cases",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/search?starting_row=1&number_of_rows=50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								"search"
+							],
+							"query": [
+								{
+									"key": "starting_row",
+									"value": "1"
+								},
+								{
+									"key": "number_of_rows",
+									"value": "50"
+								},
+								{
+									"key": "sort_field",
+									"value": ":sort_field",
+									"disabled": true
+								},
+								{
+									"key": "sort_direction",
+									"value": ":sort_direction",
+									"disabled": true
+								},
+								{
+									"key": "release_id",
+									"value": ":release_id",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "{{projectId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move Test Case",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/:test_case_id/move?test_case_folder_id=:test_case_folder_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								":test_case_id",
+								"move"
+							],
+							"query": [
+								{
+									"key": "test_case_folder_id",
+									"value": ":test_case_folder_id"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "test_case_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Test Cases For Owner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/test-cases",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"test-cases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Test Case",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"\",\n    \"TestCaseStatusId\": \"\",\n    \"TestCaseTypeId\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Test Case By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/:test_case_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								":test_case_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "test_case_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Test Case",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Test Case",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/test-cases/:test_case_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"test-cases",
+								":test_case_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "test_case_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Requirements",
+			"item": [
+				{
+					"name": "Count Requirements (GET)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/count",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								"count"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count Requirements (POST)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/count",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								"count"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Requirement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Name\": \"Test requirement created via API\",\n  \"RequirementTypeId\": 2,\n  \"StatusId\": 1,\n  \"ImportanceId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "{{projectId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Requirement with Indent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/indent/:indent_position",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								"indent",
+								":indent_position"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "indent_position",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Requirement with Parent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/parent/:parent_requirement_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								"parent",
+								":parent_requirement_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "parent_requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Requirements",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/search?starting_row=1&number_of_rows=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								"search"
+							],
+							"query": [
+								{
+									"key": "starting_row",
+									"value": "1"
+								},
+								{
+									"key": "number_of_rows",
+									"value": "10"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "{{projectId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Requirements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements?starting_row=:starting_row&number_of_rows=:number_of_rows",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements"
+							],
+							"query": [
+								{
+									"key": "starting_row",
+									"value": ":starting_row"
+								},
+								{
+									"key": "number_of_rows",
+									"value": ":number_of_rows"
+								}
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Requirement By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/:requirement_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								":requirement_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Requirement",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Requirements For Owner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/requirements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"requirements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Requirement",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/:requirement_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								":requirement_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move Requirement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/:requirement_id/move/:destination_requirement_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								":requirement_id",
+								"move",
+								":destination_requirement_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "requirement_id",
+									"value": ""
+								},
+								{
+									"key": "destination_requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move Requirement To End",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/:requirement_id/move",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								":requirement_id",
+								"move"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Indent Requirement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/:requirement_id/indent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								":requirement_id",
+								"indent"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outdent Requirement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/projects/:project_id/requirements/:requirement_id/outdent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":project_id",
+								"requirements",
+								":requirement_id",
+								"outdent"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": ""
+								},
+								{
+									"key": "requirement_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users?password=:password&password_question=:password_question&password_answer=:password_answer&project_id=:project_id&project_role_id=:project_role_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": ":password"
+								},
+								{
+									"key": "password_question",
+									"value": ":password_question"
+								},
+								{
+									"key": "password_answer",
+									"value": ":password_answer"
+								},
+								{
+									"key": "project_id",
+									"value": ":project_id"
+								},
+								{
+									"key": "project_role_id",
+									"value": ":project_role_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve User By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/:user_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "28"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve User By Username",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/usernames/:user_name?include_inactive=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"usernames",
+								":user_name"
+							],
+							"query": [
+								{
+									"key": "include_inactive",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "user_name",
+									"value": "digvijay"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/:user_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/:user_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "username",
+								"value": "{{username}}"
+							},
+							{
+								"key": "api-key",
+								"value": "{{apikey}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://higgsboson.spiraservice.net/services/v5_0/RestService.svc",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "digvijay",
+			"type": "string"
+		},
+		{
+			"key": "apikey",
+			"value": "{000F7AB0-5DAE-4ED9-A317-23E2E519D368}",
+			"type": "string"
+		},
+		{
+			"key": "projectId",
+			"value": "25",
+			"type": "string"
+		}
+	]
+}
