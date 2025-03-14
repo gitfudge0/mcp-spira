@@ -4,8 +4,8 @@ MCP Server for Spira, enabling LLMs to create and manage requirements and test c
 
 ## Features
 
-- **Requirements Management**: Create feature requirements with priority status
-- **Test Case Management**: Create detailed test cases linked to requirements
+- **Requirements Management**: Create, retrieve, and update feature requirements with priority status
+- **Test Case Management**: Create and retrieve detailed test cases linked to requirements
 
 ## Tools
 
@@ -15,13 +15,36 @@ MCP Server for Spira, enabling LLMs to create and manage requirements and test c
    - Inputs:
      - `name` (string): Name of the requirement
 
-2. `create-test-case`
+2. `get-requirement-by-id`
+
+   - Fetch a requirement by its ID from Spira
+   - Inputs:
+     - `requirementId` (number): ID of the requirement to fetch
+
+3. `update-requirement`
+
+   - Update an existing requirement in Spira
+   - Inputs:
+     - `requirementId` (number): ID of the requirement to update
+     - `name` (string, optional): New name for the requirement
+     - `description` (string, optional): New description for the requirement
+     - `importanceId` (number, optional): New importance ID
+     - `statusId` (number, optional): New status ID
+     - `requirementTypeId` (number, optional): New requirement type ID
+
+4. `create-test-case`
+
    - Create a test case on Spira
    - Inputs:
      - `name` (string): Test case name
      - `description` (string): Detailed test case description
      - `release` (string): Release to associate with the test case
      - `requirements` (string[]): Array of requirements to link to this test case
+
+5. `get-test-case-by-id`
+   - Fetch a test case by its ID from Spira
+   - Inputs:
+     - `testCaseId` (number): ID of the test case to fetch
 
 ## Setup
 
@@ -85,9 +108,19 @@ After setting up the MCP server, you can use it with Claude to:
    Please create a requirement for adding user authentication to our system
    ```
 
-2. Create test cases:
+2. Fetch a requirement:
+
+   ```
+   Can you fetch the requirement with ID 123 for me?
+   ```
+
+3. Create test cases:
    ```
    Create a test case for verifying that a user can log in with valid credentials
+   ```
+4. Fetch a test case:
+   ```
+   Can you get the details of test case with ID 456?
    ```
 
 ## License
