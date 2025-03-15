@@ -315,6 +315,36 @@ export class SpiraService {
   }
 
   /**
+   * Create a new test case
+   * @param description Description of test step
+   * @param position Position of test case
+   * @returns The created test step data or error message
+   */
+  async createTestStep(
+    testCaseId: string,
+    description: string,
+    expectedResult?: string,
+    position?: string,
+  ) {
+    try {
+      const response = await this.client.post(
+        `/projects/${this.projectId}/test-cases/${testCaseId}/test-steps`,
+        {
+          Description: description,
+          ...(expectedResult ? { ExpectedResult: expectedResult } : {}),
+          ...(position ? { Position: position } : {}),
+        },
+      );
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return `API Error: ${error.message} - ${error.response?.data || "No additional error data"}`;
+      }
+      return `Error: ${error}`;
+    }
+  }
+
+  /**
    * Retrieve all users in the system
    * @returns List of users or error message
    */
