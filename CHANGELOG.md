@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1]
+
+### Updated
+
+- Documentation
+
 ## [1.1.0]
 
 ### Added
@@ -16,4 +22,3 @@ All notable changes to this project will be documented in this file.
 - Ability to fetch requirements by ID
 - Ability to create test cases
 - Ability to fetch test cases by ID
-
