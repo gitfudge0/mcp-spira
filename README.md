@@ -1,11 +1,12 @@
 # mcp-spira
 
-MCP Server for Spira, enabling LLMs to create and manage requirements and test cases.
+MCP Server for Spira, enabling LLMs to create and manage requirements, test cases, and test steps.
 
 ## Features
 
 - **Requirements Management**: Create, retrieve, and update feature requirements with priority status
 - **Test Case Management**: Create and retrieve detailed test cases linked to requirements
+- **Test Steps Support**: Create test steps for test cases
 
 ## Tools
 
@@ -45,6 +46,14 @@ MCP Server for Spira, enabling LLMs to create and manage requirements and test c
    - Fetch a test case by its ID from Spira
    - Inputs:
      - `testCaseId` (number): ID of the test case to fetch
+
+6. `create-test-step`
+   - Create test step for a given test case
+   - Inputs:
+     - `testCaseId` (string): ID of the test case to add steps to
+     - `description` (string): Description of the test step
+     - `expectedResult` (string): Expected result of the test step
+     - `position` (string): Position/order of the test step
 
 ## Setup
 
@@ -121,6 +130,11 @@ After setting up the MCP server, you can use it with Claude to:
 4. Fetch a test case:
    ```
    Can you get the details of test case with ID 456?
+   ```
+
+5. Create test steps:
+   ```
+   Add a test step to test case 456 for verifying the login button is clickable
    ```
 
 ## License
