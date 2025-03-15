@@ -14,6 +14,8 @@ import * as requirements from "./operations/requirements";
 import * as requirementHandlers from "./handlers/requirement";
 import * as testcases from "./operations/testcases";
 import * as testcaseHandlers from "./handlers/testcases";
+import * as teststeps from "./operations/teststeps";
+import * as teststepHandlers from "./handlers/teststeps";
 
 // Load environment variables
 dotenv.config();
@@ -57,6 +59,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       description: "Fetch a test case by its ID from Spira",
       inputSchema: zodToJsonSchema(testcases.GetTestCaseByIdSchema),
     },
+    {
+      name: "create-test-step",
+      description: "Create test step for a given test case",
+      inputSchema: zodToJsonSchema(teststeps.CreateTestStepSchema),
+    },
   ],
 }));
 
@@ -86,6 +93,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
     case "get-test-case-by-id": {
       return await testcaseHandlers.HandleGetTestCaseById(
+        spiraService,
+        request,
+      );
+    }
+    case "create-test-step": {
+      return await teststepHandlers.HandleTestStepCreation(
         spiraService,
         request,
       );
