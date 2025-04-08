@@ -29,7 +29,7 @@ export class SpiraService {
     }
 
     this.client = axios.create({
-      baseURL: this.baseUrl,
+      baseURL: this.baseUrl + `/projects/${this.projectId}`,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -55,15 +55,12 @@ export class SpiraService {
     }
 
     try {
-      const response = await this.client.post(
-        `/projects/${this.projectId}/requirements`,
-        {
-          Name: name,
-          RequirementTypeId: 2, // Feature
-          StatusId: 1, // Requested
-          ImportanceId: 2, // High
-        },
-      );
+      const response = await this.client.post(`/requirements`, {
+        Name: name,
+        RequirementTypeId: 2, // Feature
+        StatusId: 1, // Requested
+        ImportanceId: 2, // High
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -85,10 +82,7 @@ export class SpiraService {
       if (startingRow !== undefined) params.starting_row = startingRow;
       if (numberOfRows !== undefined) params.number_of_rows = numberOfRows;
 
-      const response = await this.client.get(
-        `/projects/${this.projectId}/requirements`,
-        { params },
-      );
+      const response = await this.client.get(`/requirements`, { params });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -108,7 +102,7 @@ export class SpiraService {
   async searchRequirements() {
     try {
       const response = await this.client.post(
-        `/projects/${this.projectId}/requirements/search?starting_row=1&number_of_rows=50`,
+        `/requirements/search?starting_row=1&number_of_rows=50`,
       );
       return response.data;
     } catch (error) {
@@ -130,9 +124,7 @@ export class SpiraService {
     }
 
     try {
-      const response = await this.client.get(
-        `/projects/${this.projectId}/requirements/${requirementId}`,
-      );
+      const response = await this.client.get(`/requirements/${requirementId}`);
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -159,10 +151,7 @@ export class SpiraService {
     try {
       // Ensure the RequirementId is included in the update data
       const data = { ...updateData, RequirementId: requirementId };
-      const response = await this.client.put(
-        `/projects/${this.projectId}/requirements`,
-        data,
-      );
+      const response = await this.client.put(`/requirements`, data);
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -184,7 +173,7 @@ export class SpiraService {
 
     try {
       const response = await this.client.delete(
-        `/projects/${this.projectId}/requirements/${requirementId}`,
+        `/requirements/${requirementId}`,
       );
       return response.data;
     } catch (error) {
@@ -207,20 +196,17 @@ export class SpiraService {
     requirements?: string[],
   ) {
     try {
-      const response = await this.client.post(
-        `/projects/${this.projectId}/test-cases`,
-        {
-          Name: name,
-          Description: description,
-          TestCaseTypeId: 0,
-          TestCaseStatusId: 0,
-          TestCasePriorityId: 2,
-          ...(releaseId ? { ReleaseId: releaseId } : {}),
-          ...(requirements
-            ? { Requirements: requirements.map((x) => ({ RequirementId: x })) }
-            : {}),
-        },
-      );
+      const response = await this.client.post(`/test-cases`, {
+        Name: name,
+        Description: description,
+        TestCaseTypeId: 0,
+        TestCaseStatusId: 0,
+        TestCasePriorityId: 2,
+        ...(releaseId ? { ReleaseId: releaseId } : {}),
+        ...(requirements
+          ? { Requirements: requirements.map((x) => ({ RequirementId: x })) }
+          : {}),
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -248,10 +234,7 @@ export class SpiraService {
       if (numberOfRows !== undefined) params.number_of_rows = numberOfRows;
       if (releaseId !== undefined) params.release_id = releaseId;
 
-      const response = await this.client.get(
-        `/projects/${this.projectId}/test-cases`,
-        { params },
-      );
+      const response = await this.client.get(`/test-cases`, { params });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -272,9 +255,7 @@ export class SpiraService {
     }
 
     try {
-      const response = await this.client.get(
-        `/projects/${this.projectId}/test-cases/${testCaseId}`,
-      );
+      const response = await this.client.get(`/test-cases/${testCaseId}`);
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -302,7 +283,7 @@ export class SpiraService {
 
     try {
       const response = await this.client.post(
-        `/projects/${this.projectId}/test-cases/search?starting_row=${startingRow}&number_of_rows=${numberOfRows}`,
+        `/test-cases/search?starting_row=${startingRow}&number_of_rows=${numberOfRows}`,
         searchCriteria,
       );
       return response.data;
@@ -328,7 +309,7 @@ export class SpiraService {
   ) {
     try {
       const response = await this.client.post(
-        `/projects/${this.projectId}/test-cases/${testCaseId}/test-steps`,
+        `/test-cases/${testCaseId}/test-steps`,
         {
           Description: description,
           ...(expectedResult ? { ExpectedResult: expectedResult } : {}),
